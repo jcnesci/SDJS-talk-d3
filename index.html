@@ -20,6 +20,8 @@
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
+
+		<script src="lib/js/jc-scripts.js"></script>
 	</head>
 
 	<body>
@@ -45,24 +47,25 @@
 						<br>and how D3.js was used to visualize the data
 						<br>---
 						<br>JC Nesci
-						<br>sosolimited.com
+						<br><a href="http://www.sosolinited.com">sosolimited.com</a>
 						<br>@sosolimited
 					</p>
 				</section>
 				<section>
-				    <h3>TODO: get video</h3>
-				    <video class="stretch" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>
-				</section>
-				<section data-background="http://example.com/image.png">
-				    <h3>TODO: get infographic</h3>
-				    <!-- <video class="stretch" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video> -->
+				    <h3>Wait, what?</h3>
+				    <video class="stretch" src="content/WhosGonnaWin-v3-NFL-MUSIC.mp4"></video>
 				</section>
 				<section>
-				    <h3>Internal dashboard build with D3.js</h3>
+				    <section><h3>Um, ok... how?</h3></section>
+				    <section data-background="content/Superbowl-infographic-poster-final-p1.png"></section>
+				    <section data-background="content/Superbowl-infographic-poster-final-p2.png"></section>
+				</section>
+				<section>
+				    <h3>So I built this internal dashboard to visualize our live data...</h3>
 				    <image class="stretch" src="content/dashboard-screenshot.png"></image>
 				</section>
 				<section>
-					<h3>What's D3.js?</h3>
+					<h3>But wait, what's D3.js?</h3>
 					<p> It's a <a href="http://d3js.org/">charting library</a> in Javascript.<br>
 						There are many others but this one was built by <a href="http://bost.ocks.org/mike/">Mike Bostock</a> and <a href="http://homes.cs.washington.edu/~jheer/">Jeff Heer</a>
 						who are at the forefront of the datavis renaissance.
@@ -70,20 +73,80 @@
 				</section>
 				<section>
 					<h3>Here's an example</h3>
-					<li>Let's make a <a href="http://bl.ocks.org/mbostock/3885304">bar chart</a>.</li>
-					<li>... or you can make it <a href="http://bost.ocks.org/mike/algorithms/">more complicated</a>, if you like.
+					<ul>
+						<li>Let's make a <a href="http://bl.ocks.org/mbostock/3885304">bar chart</a>.</li>
+						<li>... or you can make it <a href="http://bost.ocks.org/mike/algorithms/">more complicated</a>, if you like.</li>
+					</ul>
 				</section>
 				<section>
-					<h3>My dashboard code.</h3>
+					<section>
+						<h3>Ok. So your dashboard code, then?</h3>
+						<p>Let's switch over to Sublime, shall we?</p>
+					</section>
+					<section>
+						<h3>But first, what's the shape of the data?</h3>
+						<p>Let's look at 1 minute of <hilite>confidence</hilite>.</p>
+					</section>
+					<section>
+						<pre><code>
+{
+  "question": "game",
+  "type": "confidence",
+  "afc_team": "broncos",
+  "nfc_team": "seahawks",
+  "afc": [
+    {
+      "value": 0.5727699530516432,
+      "time": [
+        2014,
+        1,
+        31,
+        23,
+        3,
+        59
+      ]
+    }
+  ],
+  "nfc": [
+    {
+      "value": 0.6851851851851852,
+      "time": [
+        2014,
+        1,
+        31,
+        23,
+        3,
+        59
+      ]
+    }
+  ]
+}
+						</code></pre>
+					</section>
+					<section>
+						<h3>Let's make some time-series charts</h3>
+						<ul>
+							<li>global vars for all charts : <hilite>dimensions, scales, axes</hilite></li>
+							<li>specific vars for each chart : <hilite>setup_charts()</hilite></li>
+							<li>format the raw data, do some averaging : <hilite>format_raw_data()</hilite></li>
+							<li>draw charts one by one : <hilite>draw_chart()</hilite></li>
+						</ul>
+					</section>
 				</section>
-				<!-- ... -->
-
 				<section>
-				    <h3>TODO: get screenshot of VPH app</h3>
-				    <video class="stretch" src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>
+				    <section>
+				    	<h3>The real deal : a realtime app in the VPH</h3>
+					    <image class="stretch" src="content/AppScreenshot_012214.png"></image>
+				    </section>
+				    <section data-background="content/AppScreenshot_012214.png"></section>
+				    <section data-background="content/VPH_06_WGW_Screens_edited.png"></section>
 				</section>
 				<section>
-				    <h3>A quick taste of MISO</h3>
+				    <h3>A quick taste of <a href="http://misoproject.com/d3-chart/">MISO</a></h3>
+				    <ul>
+				    	<li>framework for building reusable charts</li>
+				    	<li>again, try the <a href="http://misoproject.com/d3-chart/examples/basic.html">bar chart example</a> and discover <hilite>chart.draw()</hilite></li>
+				    </ul>
 				</section>
 				<section>
 				    <h3>Resources</h3>
